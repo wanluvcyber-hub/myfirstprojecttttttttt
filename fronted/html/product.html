@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyShop - สินค้า</title>
+  <link rel="stylesheet" href="/store/fronted/css/product.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>🛍️ MyShop</h2>
+    <div>
+      <button onclick="goCart()">🛒 ตะกร้า</button>
+      <button onclick="logout()">ออกจากระบบ</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>สินค้าทั้งหมด</h2>
+
+    <!-- Product Grid -->
+    <div id="product-list" class="grid"></div>
+  </div>
+
+  <script src="/store/fronted/js/api.js"></script>
+  <script src="/store/fronted/js/product.js"></script>
+</body>
+</html>

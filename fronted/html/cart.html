@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyShop - ตะกร้าสินค้า</title>
+    <link rel="stylesheet" href="/store/fronted/css/cart.css">
+</head>
+<body >
+
+<div class="cart-page">
+    <div class="cart-header">
+        <h1>🛒 ตะกร้าสินค้า</h1>
+        <button class="btn-back" onclick="window.location.href='product.html'">← กลับไป</button>
+    </div>
+
+    <div class="cart-container">
+        <!-- Cart Items -->
+        <div class="cart-items">
+            <div id="cart-list"></div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+            <h3 class="summary-title">สรุปการสั่งซื้อ</h3>
+            <div class="summary-row">
+                <span>รวมสินค้า:</span>
+                <span id="item-count">0 รายการ</span>
+            </div>
+            <div class="summary-row">
+                <span>ค่าสินค้า:</span>
+                <span id="subtotal">0 บาท</span>
+            </div>
+            <div class="summary-row total">
+                <span>รวมทั้งสิ้น:</span>
+                <span class="amount" id="total">0 บาท</span>
+            </div>
+            <button class="btn-checkout" onclick="handleCheckout()">ดำเนินการสั่งซื้อ</button>
+        </div>
+    </div>
+</div>
+
+<script src="/store/fronted/js/api.js"></script>
+<script src="/store/fronted/js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyShop - หน้าแรก</title>
+  <link rel="stylesheet" href="/fronted/css/global.css">
+  <style>
+    body {
+      background-color: var(--gray-bg);
+    }
+
+    .navbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-micro);
+    }
+
+    .navbar h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+    }
+
+    .navbar div {
+      display: flex;
+      gap: 12px;
+    }
+
+    .navbar button {
+      padding: 10px 16px;
+      border: 1px solid transparent;
+      background-color: var(--kraken-purple);
+      color: var(--white);
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .navbar button:hover {
+      background-color: var(--kraken-purple-dark);
+      transform: translateY(-2px);
+      box-shadow: rgba(113, 50, 245, 0.2) 0px 4px 12px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #7132f5 0%, #5741d8 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 40px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 32px;
+      opacity: 0.9;
+    }
+
+    .btn-primary-light {
+      display: inline-block;
+      padding: 13px 24px;
+      background-color: var(--white);
+      color: var(--kraken-purple);
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary-light:hover {
+      transform: translateY(-2px);
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 32px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 60px 0;
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 32px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--gray-border);
+      text-align: center;
+      box-shadow: var(--shadow-micro);
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-subtle);
+      border-color: var(--kraken-purple);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .navbar {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>🛍️ MyShop</h2>
+    <div>
+      <button onclick="goCart()">🛒 ตะกร้า</button>
+      <button onclick="logout()">ออกจากระบบ</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>ยินดีต้อนรับสู่ MyShop</h1>
+    <p>ร้านค้าออนไลน์ที่เชื่อถือได้ สินค้าคุณภาพราคาเหมาะสม</p>
+    <a href="product.html" class="btn-primary-light">ดูสินค้า</a>
+  </div>
+
+  <!-- Features Section -->
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 40px; font-size: 28px;">ทำไมต้องเลือก MyShop?</h2>
+    
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>จัดส่งรวดเร็ว</h3>
+        <p>ส่งสินค้าไปถึงมือคุณด้วยความเร็วที่ท่านพอใจ</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>ปลอดภัย</h3>
+        <p>การชำระเงินและข้อมูลของคุณได้รับการปกป้องอย่างดี</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>ราคาถูกมาก</h3>
+        <p>ราคาดีที่สุด กับข้อเสนอพิเศษต่างๆ</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📞</div>
+        <h3>บริการลูกค้า</h3>
+        <p>ทีมรองรับการขายพร้อมช่วยเหลือ 24/7</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goCart(){
+      window.location.href = "cart.html"
+    }
+
+    function logout(){
+      window.location.href = "login.html"
+    }
+  </script>
+</body>
+</html>

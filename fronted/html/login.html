@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyShop — เข้าสู่ระบบ</title>
+  <link rel="stylesheet" href="/store/fronted/css/login.css">
+</head>
+<body >
+
+<div class="login-container">
+  <div class="login-header">
+    <h1>MyShop</h1>
+    <p>ร้านค้าออนไลน์ที่เชื่อถือได้</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('login')">เข้าสู่ระบบ</button>
+    <button class="tab" onclick="switchTab('register')">สมัครสมาชิก</button>
+  </div>
+
+  <!-- Login Form -->
+  <div id="loginForm">
+    <div class="form-group">
+      <label>อีเมล</label>
+      <input type="email" id="loginEmail" placeholder="example@email.com">
+    </div>
+
+    <div class="form-group">
+      <label>รหัสผ่าน</label>
+      <input type="password" id="loginPassword" placeholder="รหัสผ่านของคุณ">
+    </div>
+
+    <button class="btn btn-submit" onclick="handleLogin()">เข้าสู่ระบบ</button>
+  </div>
+
+  <!-- Register Form -->
+  <div id="registerForm" style="display:none">
+    <div class="form-group">
+      <label>ชื่อ</label>
+      <input type="text" id="regName" placeholder="ชื่อของคุณ">
+    </div>
+
+    <div class="form-group">
+      <label>อีเมล</label>
+      <input type="email" id="regEmail" placeholder="example@email.com">
+    </div>
+
+    <div class="form-group">
+      <label>รหัสผ่าน</label>
+      <input type="password" id="regPassword" placeholder="รหัสผ่านของคุณ">
+    </div>
+
+    <button class="btn btn-submit" onclick="handleRegister()">สมัครสมาชิก</button>
+  </div>
+
+  <div class="msg" id="msg"></div>
+</div>
+
+<script src="/store/fronted/js/api.js"></script>
+<script src="/store/fronted/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - จัดการสินค้า</title>
+  <link rel="stylesheet" href="/store/fronted/css/admin.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">🛍️ MyShop Admin</div>
+    <button class="btn-logout" onclick="logout()">ออกจากระบบ</button>
+  </nav>
+
+  <!-- Layout -->
+  <div class="layout">
+    <!-- Form Card -->
+    <div class="form-card">
+      <div class="form-title" id="form-title">➕ เพิ่มสินค้าใหม่</div>
+
+      <input type="hidden" id="product-id" value="">
+
+      <div class="form-group">
+        <label for="name">ชื่อสินค้า</label>
+        <input type="text" id="name" placeholder="กรุณาระบุชื่อสินค้า">
+      </div>
+
+      <div class="form-group">
+        <label for="price">ราคา (บาท)</label>
+        <input type="number" id="price" placeholder="0.00" step="0.01">
+      </div>
+
+      <div class="form-group">
+        <label for="stock">จำนวนคงคลัง</label>
+        <input type="number" id="stock" placeholder="0" min="0">
+      </div>
+
+      <div class="form-group">
+        <label for="image">รูปภาพสินค้า</label>
+        <input type="file" id="image" accept="image/*">
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button class="btn-submit" id="btn-submit" onclick="handleSubmit()" style="flex: 1;">➕ เพิ่มสินค้า</button>
+        <button class="btn-cancel" id="btn-cancel" onclick="resetForm()" style="flex: 1; display: none;">❌ ยกเลิก</button>
+      </div>
+    </div>
+
+    <!-- Products List -->
+    <div style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
+      <h2 style="color: #333; margin-bottom: 25px;">📋 รายการสินค้า</h2>
+      
+      <div id="products-list" style="max-height: 700px; overflow-y: auto;"></div>
+
+      <div id="empty-message" style="text-align: center; padding: 60px 20px; color: #999;">
+        <p style="font-size: 18px;">📭 ยังไม่มีสินค้าในระบบ</p>
+        <p style="font-size: 14px; margin-top: 10px;">เพิ่มสินค้าใหม่โดยใช้แบบฟอร์มด้านซ้าย</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" style="position: fixed; bottom: 20px; right: 20px; background: white; padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: none; min-width: 250px; z-index: 1000;">
+    <p id="toast-message" style="margin: 0; font-size: 14px;"></p>
+  </div>
+
+  <script src="/store/fronted/js/api.js"></script>
+  <script src="/store/fronted/js/admin.js"></script>
+</body>
+</html>

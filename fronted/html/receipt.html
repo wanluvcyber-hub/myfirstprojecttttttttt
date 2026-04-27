@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyShop - ใบเสร็จ</title>
+    <link rel="stylesheet" href="/store/fronted/css/global.css">
+    <style>
+        body {
+            background-color: var(--gray-bg);
+        }
+        .receipt-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .receipt-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow-subtle);
+            text-align: center;
+        }
+        .receipt-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+        .receipt-card h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--success-green-dark);
+        }
+        .receipt-card p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+        .order-details {
+            text-align: left;
+            background-color: var(--gray-bg);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .order-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray-border);
+        }
+        .order-row:last-child {
+            border-bottom: none;
+        }
+        .order-row-label {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        .order-row-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .order-items {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        .order-items h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        .item-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 13px 16px;
+            background-color: var(--kraken-purple);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: inherit;
+        }
+        .btn-back:hover {
+            background-color: var(--kraken-purple-dark);
+        }
+    </style>
+</head>
+<body>
+
+<div class="receipt-container">
+    <div class="receipt-card">
+        <div class="receipt-icon">✅</div>
+        <h1>สั่งซื้อสำเร็จ!</h1>
+        <p>ขอบคุณที่ใช้บริการของเรา</p>
+        
+        <div id="receipt"></div>
+        
+        <a href="product.html" class="btn-back">← ไปยังหน้าสินค้า</a>
+    </div>
+</div>
+
+<script src="/store/fronted/js/api.js"></script>
+<script src="/store/fronted/js/receipt.js"></script>
+</body>
+</html>
